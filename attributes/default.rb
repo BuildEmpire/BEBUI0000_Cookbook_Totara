@@ -24,8 +24,8 @@ default['cookbook_totara']['default_config']['nginx'] = {
 }
 
 default['cookbook_totara']['default_config']['php'] = {
-  'version': '7.0',
-  'packages': %w(php7.0-cgi php7.0 php7.0-dev php7.0-cli php-pear php7.0-mysql php7.0-gd php7.0-mbstring php7.0-zip php7.0-curl php7.0-intl php7.0-xmlrpc php7.0-soap)
+  'version': '7.2',
+  'packages': %w(php7.2-cgi php7.2 php7.2-dev php7.2-cli php-pear php7.2-mysql php7.2-gd php7.2-mbstring php7.2-zip php7.2-curl php7.2-intl php7.2-xmlrpc php7.2-soap)
 }
 
 default['cookbook_totara']['default_config']['php-fpm']['pools'] = {
