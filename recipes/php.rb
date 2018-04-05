@@ -10,8 +10,9 @@ node.set['php-fpm']['pools'] = node['cookbook_totara']['default_config']['php-fp
 node.set['php']['packages'] = node['cookbook_totara']['default_config']['php']['packages']
 
 apt_repository 'ondrej-php' do
-  uri          'ppa:ondrej/php'
+  uri          'ppa:ondrej/nginx-mainline'
   distribution node['lsb']['codename']
+  keyserver    'ha.pool.sks-keyservers.net'
   only_if      {
     node['php']['version'] >= '7'
   }
