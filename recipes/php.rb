@@ -14,7 +14,7 @@ apt_repository 'ondrej-php' do
   distribution node['lsb']['codename']
   trusted      true
   only_if      {
-    node['php']['version'] >= '7'
+    node['cookbook_totara']['default_config']['php']['version'] >= '7'
   }
 end
 
