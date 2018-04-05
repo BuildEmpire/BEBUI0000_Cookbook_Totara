@@ -25,7 +25,7 @@ default['cookbook_totara']['default_config']['nginx'] = {
 
 default['cookbook_totara']['default_config']['php'] = {
   'version': '7.2',
-  'packages': %w(php-pear)
+  'packages': %w(php7.2 php-pear)
 }
 
 default['cookbook_totara']['default_config']['php-fpm']['pools'] = {
