@@ -25,6 +25,15 @@ default['cookbook_totara']['default_config']['nginx'] = {
 
 default['cookbook_totara']['default_config']['php'] = {
   'version': '7.2',
+  'conf_dir': '/etc/php/7.2/cli',
+  'curl': {'package': 'php7.2-curl'},
+  'gd': {'package': 'php7.2-gd'},
+  'fpm_package': 'php7.2-fpm',
+  'fpm_pooldir': '/etc/php/7.2/fpm/pool.d',
+  'fpm_service': 'php7.2-fpm',
+  'fpm_socket': '/var/run/php/php7.2-fpm.sock',
+  'fpm_default_conf': '/etc/php/7.2/fpm/pool.d/www.conf',
+  'ext_conf_dir': '/etc/php/7.2/mods-available',
   'packages': %w(php7.2-cgi php7.2 php7.2-dev php7.2-cli php-pear php7.2-mysql php7.2-gd php7.2-mbstring php7.2-zip php7.2-curl php7.2-intl php7.2-xmlrpc php7.2-soap)
 }
 
