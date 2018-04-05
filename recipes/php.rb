@@ -19,6 +19,12 @@ node.set['php']['fpm_socket'] = node['cookbook_totara']['default_config']['php']
 node.set['php']['fpm_default_conf'] = node['cookbook_totara']['default_config']['php']['fpm_default_conf']
 node.set['php']['ext_conf_dir'] = node['cookbook_totara']['default_config']['php']['ext_conf_dir']
 
+node.set['php-fpm']['conf_dir'] = node['cookbook_totara']['default_config']['php-fpm']['conf_dir']
+node.set['php-fpm']['pool_conf_dir'] = node['cookbook_totara']['default_config']['php-fpm']['pool_conf_dir']
+node.set['php-fpm']['conf_file'] = node['cookbook_totara']['default_config']['php-fpm']['conf_file']
+node.set['php-fpm']['error_log'] = node['cookbook_totara']['default_config']['php-fpm']['error_log']
+node.set['php-fpm']['pid'] = node['cookbook_totara']['default_config']['php-fpm']['pid']
+
 apt_repository 'ondrej-php' do
   uri          'ppa:ondrej/php'
   trusted      true
