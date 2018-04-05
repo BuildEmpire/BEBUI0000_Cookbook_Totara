@@ -12,8 +12,7 @@ node.set['php']['packages'] = node['cookbook_totara']['default_config']['php']['
 apt_repository 'ondrej-php' do
   uri          'ppa:ondrej/nginx-mainline'
   distribution node['lsb']['codename']
-  key          'CA1F0167ECFEA950'
-  keyserver    'ha.pool.sks-keyservers.net'
+  trusted      true
   only_if      {
     node['php']['version'] >= '7'
   }
