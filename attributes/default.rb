@@ -56,6 +56,7 @@ default['cookbook_totara']['default_config']['php-fpm']['pools'] = {
   }
 }
 
+default['cookbook_totara']['default_config']['php-fpm']['version'] = '7.2'
 default['cookbook_totara']['default_config']['php-fpm']['conf_dir'] = '/etc/php/7.2/fpm/conf.d'
 default['cookbook_totara']['default_config']['php-fpm']['pool_conf_dir'] = '/etc/php/7.2/fpm/pool.d'
 default['cookbook_totara']['default_config']['php-fpm']['conf_file'] = '/etc/php/7.2/fpm/php-fpm.conf'
