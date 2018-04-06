@@ -25,6 +25,7 @@ default['cookbook_totara']['default_config']['nginx'] = {
 
 default['cookbook_totara']['default_config']['php'] = {
   'version' => '7.2',
+  'pear' => 'pear',
   'conf_dir' => '/etc/php/7.2/cli',
   'curl' => {'package' => 'php7.2-curl'},
   'gd' => {'package' => 'php7.2-gd'},
