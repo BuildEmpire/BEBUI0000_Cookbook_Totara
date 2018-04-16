@@ -64,6 +64,6 @@ default['cookbook_totara']['default_config']['php-fpm']['error_log'] = '/var/log
 default['cookbook_totara']['default_config']['php-fpm']['pid'] = '/var/run/php7.2-fpm.pid'
 
 default['cookbook_totara']['mysql'] = {
-  'version' => '5.7',
-  'configuration_template' => 'default.cnf.erb'
+  'version': '5.7',
+  'configuration_template': 'default.cnf.erb'
 }
