@@ -25,6 +25,8 @@ default['cookbook_totara']['default_config']['nginx'] = {
 
 default['cookbook_totara']['default_config']['php'] = {
   'version' => '7.2',
+  'install_method' => 'package',
+  'pear' => 'pear',
   'conf_dir' => '/etc/php/7.2/cli',
   'curl' => {'package' => 'php7.2-curl'},
   'gd' => {'package' => 'php7.2-gd'},
@@ -62,6 +64,7 @@ default['cookbook_totara']['default_config']['php-fpm']['pool_conf_dir'] = '/etc
 default['cookbook_totara']['default_config']['php-fpm']['conf_file'] = '/etc/php/7.2/fpm/php-fpm.conf'
 default['cookbook_totara']['default_config']['php-fpm']['error_log'] = '/var/log/php7.2-fpm.log'
 default['cookbook_totara']['default_config']['php-fpm']['pid'] = '/var/run/php7.2-fpm.pid'
+default['cookbook_totara']['default_config']['php-fpm']['package_name'] = 'php7.2-fpm'
 
 default['cookbook_totara']['mysql'] = {
   'version': '5.7',
