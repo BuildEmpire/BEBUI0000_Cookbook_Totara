@@ -31,5 +31,7 @@ apt_repository 'ondrej-php' do
   trusted      true
 end
 
+node.set['php']['install_method'] = 'package'
+
 include_recipe "php"
 include_recipe "php-fpm"
