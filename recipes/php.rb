@@ -19,7 +19,7 @@ node.set['php']['fpm_socket'] = node['cookbook_totara']['default_config']['php']
 node.set['php']['fpm_default_conf'] = node['cookbook_totara']['default_config']['php']['fpm_default_conf']
 node.set['php']['ext_conf_dir'] = node['cookbook_totara']['default_config']['php']['ext_conf_dir']
 
-node.set['php-fpm']['version'] = node['cookbook_totara']['default_config']['php-fpm']['version']
+#node.set['php-fpm']['version'] = node['cookbook_totara']['default_config']['php-fpm']['version']
 node.set['php-fpm']['conf_dir'] = node['cookbook_totara']['default_config']['php-fpm']['conf_dir']
 node.set['php-fpm']['pool_conf_dir'] = node['cookbook_totara']['default_config']['php-fpm']['pool_conf_dir']
 node.set['php-fpm']['conf_file'] = node['cookbook_totara']['default_config']['php-fpm']['conf_file']
@@ -27,6 +27,7 @@ node.set['php-fpm']['error_log'] = node['cookbook_totara']['default_config']['ph
 node.set['php-fpm']['pid'] = node['cookbook_totara']['default_config']['php-fpm']['pid']
 
 node.set['php-fpm']['package_name'] = 'php7.2-fpm'
+#node.set['php-fpm']['installation_action'] = 'package'
 node.set['php']['pear'] = 'pear'
 
 apt_repository 'ondrej-php' do
