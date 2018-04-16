@@ -26,6 +26,8 @@ node.set['php-fpm']['conf_file'] = node['cookbook_totara']['default_config']['ph
 node.set['php-fpm']['error_log'] = node['cookbook_totara']['default_config']['php-fpm']['error_log']
 node.set['php-fpm']['pid'] = node['cookbook_totara']['default_config']['php-fpm']['pid']
 
+node.set['php-fpm']['package_name'] = 'php7.2-fpm'
+
 apt_repository 'ondrej-php' do
   uri          'ppa:ondrej/php'
   trusted      true
