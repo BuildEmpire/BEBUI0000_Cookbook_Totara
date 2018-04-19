@@ -16,7 +16,7 @@ default['cookbook_totara']['htpasswd'] = {
 }
 
 default['cookbook_totara']['default_config']['nginx'] = {
-  'template_name'     => 'nginx_vhost_totara.conf.erb',
+  'template_name'     => 'nginx/nginx_vhost_totara.conf.erb',
   'template_cookbook' => 'cookbook_totara',
   'listen_port'       => '80',
   'variables'         => {}
