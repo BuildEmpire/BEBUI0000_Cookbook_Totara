@@ -34,12 +34,15 @@ server {
     location / {
         root <%= @root_path %>;
         index  index.php index.html index.htm;
-        try_files $uri $uri/ /local/cleanurls/router.php?q=$uri&$args;
 <% if @htpasswd_path != "" -%>
         auth_basic "Restricted";
         auth_basic_user_file <%= @htpasswd_path %>;
         try_files $uri $uri/ /index.html;
 <% end -%>
+    }
+
+    location /catalog {
+        try_files $uri $uri/ /catalog/router.php?$args&uri=$uri
     }
     
     location ~ [^/]\.php(/|$) {
