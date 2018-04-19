@@ -66,7 +66,6 @@ default['cookbook_totara']['default_config']['php-fpm'] = {
   }
 }
 
-default['cookbook_totara']['mysql'] = {
-  'version'                => '5.7',
-  'configuration_template' => 'default.cnf.erb'
-}
+default['cookbook_totara']['database']['root_password'] = nil
+default['cookbook_totara']['database']['version'] = '5.7'
+default['cookbook_totara']['database']['databases'] = []
