@@ -16,7 +16,7 @@ default['cookbook_totara']['htpasswd'] = {
 }
 
 default['cookbook_totara']['default_config']['nginx'] = {
-  'template_name'     => 'nginx_vhost_totara.conf.erb',
+  'template_name'     => 'nginx/nginx_vhost_totara.conf.erb',
   'template_cookbook' => 'cookbook_totara',
   'listen_port'       => '80',
   'variables'         => {}
@@ -66,7 +66,6 @@ default['cookbook_totara']['default_config']['php-fpm'] = {
   }
 }
 
-default['cookbook_totara']['mysql'] = {
-  'version'                => '5.7',
-  'configuration_template' => 'default.cnf.erb'
-}
+default['cookbook_totara']['database']['root_password'] = nil
+default['cookbook_totara']['database']['version'] = '5.7'
+default['cookbook_totara']['database']['databases'] = []
