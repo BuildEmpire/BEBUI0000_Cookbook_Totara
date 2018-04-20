@@ -42,7 +42,7 @@ server {
     }
 
     location /catalog {
-        try_files $uri $uri/ /catalog/router.php?$args&uri=$uri
+        try_files $uri $uri/ /catalog/router.php?$args&uri=$uri;
     }
     
     location ~ [^/]\.php(/|$) {
