@@ -12,6 +12,6 @@ recipe 'cookbook_totara', 'Totara Cookbook'
   supports os
 end
 
-%w{ build-essential php php-fpm nginx mysql }.each do |cb|
+%w{ build-essential php php-fpm nginx mysql acme }.each do |cb|
   depends cb
 end
