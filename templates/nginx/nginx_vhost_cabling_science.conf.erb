@@ -31,6 +31,10 @@ server {
     ssl_prefer_server_ciphers on;
 <% end -%>
 
+    location ~* \/catalog($|\/.*) {
+        try_files $uri $uri/ /catalog/router.php?$args&uri=$uri;
+    }
+
     location / {
         root <%= @root_path %>;
         index  index.php index.html index.htm;
@@ -41,10 +45,6 @@ server {
 <% else -%>
         try_files $uri /local/cscontent/index.php?uri=$uri;
 <% end -%>
-    }
-
-    location /catalog {
-        try_files $uri $uri/ /catalog/router.php?$args&uri=$uri;
     }
     
     location ~ [^/]\.php(/|$) {
