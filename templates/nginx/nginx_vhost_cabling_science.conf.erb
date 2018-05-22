@@ -31,7 +31,7 @@ server {
     ssl_prefer_server_ciphers on;
 <% end -%>
 
-    location ~* \/catalog($|\/.*) {
+    location /catalog {
         try_files $uri $uri/ /catalog/router.php?$args&uri=$uri;
     }
 
@@ -43,7 +43,7 @@ server {
         auth_basic_user_file <%= @htpasswd_path %>;
         try_files $uri $uri/ /index.html;
 <% else -%>
-        try_files $uri /local/cscontent/index.php?uri=$uri;
+        try_files $uri $uri/ /local/cscontent/index.php?uri=$uri;
 <% end -%>
     }
     
