@@ -3,6 +3,10 @@
 # Recipe:: default
 #
 
+if node['cookbook_totara']['ssl'] 
+	include_recipe "cookbook_totara::ssl"
+end
+
 include_recipe "cookbook_totara::database"
 include_recipe "cookbook_totara::php"
 include_recipe "cookbook_totara::nginx"

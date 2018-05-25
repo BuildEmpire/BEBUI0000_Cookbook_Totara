@@ -21,17 +21,18 @@ module PHPBox
         owner     "root"
         group     "root"
         variables(
-          :root_path      => app["app_path"] ? app["app_path"] : ::File.join(app_dir, 'public'),
-          :log_dir        => node["nginx"]["log_dir"],
-          :appname        => app["appname"],
-          :hostname       => app["hostname"],
-          :upstream       => app["upstream_name"] ? app["upstream_name"] : 'backend',
-          :listen_port    => config["listen_port"],
-          :ssl_key        => config["ssl_key"],
-          :ssl_cert       => config["ssl_cert"],
-          :ssl_dhparam    => config["ssl_dhparam"],
-          :htpasswd_path  => htpasswd_path,
-          :variables      => config["variables"]
+          :root_path       => app["app_path"] ? app["app_path"] : ::File.join(app_dir, 'public'),
+          :log_dir         => node["nginx"]["log_dir"],
+          :appname         => app["appname"],
+          :hostname        => app["hostname"],
+          :upstream        => app["upstream_name"] ? app["upstream_name"] : 'backend',
+          :listen_port     => config["listen_port"],
+          :listen_ssl_port => config["listen_ssl_port"],
+          :ssl_key         => config["ssl_key"],
+          :ssl_cert        => config["ssl_cert"],
+          :ssl_dhparam     => config["ssl_dhparam"],
+          :htpasswd_path   => htpasswd_path,
+          :variables       => config["variables"]
         )
         notifies :reload, "service[nginx]"
       end
