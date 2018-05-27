@@ -7,24 +7,26 @@
 
 root_password = node['cookbook_totara']['database']['root_password']
 
-mysql_service 'default' do
-  initial_root_password root_password
-  version node['cookbook_totara']['database']['version']
-  action %i[create start]
-end
-
-mysql_client 'default' do
-  action :create
-  version node['cookbook_totara']['database']['version']
-end
-
-mysql_config 'default' do
-  source 'mysql/default.conf.erb'
-  notifies :restart, 'mysql_service[default]'
-  action :create
-end
 
 if node['cookbook_totara']['database']['databases']
+  mysql_client 'default' do
+    action :create
+    version node['cookbook_totara']['database']['version']
+  end
+
+  mysql_service 'default' do
+    initial_root_password root_password
+    version node['cookbook_totara']['database']['version']
+    action %i[create start]
+  end
+
+
+  mysql_config 'default' do
+    source 'mysql/default.conf.erb'
+    notifies :restart, 'mysql_service[default]'
+    action :create
+  end
+
   node['cookbook_totara']['database']['databases'].each do |data|
     execute "Create database '#{data['database_name']}'" do
       cmd = "CREATE DATABASE IF NOT EXISTS #{data['database_name']}"
