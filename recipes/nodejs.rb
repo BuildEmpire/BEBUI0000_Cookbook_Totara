@@ -5,4 +5,5 @@
 # Install Nodejs from nodeversions repository.
 #
 
-include_recipe "nodejs"
+# this invokes `include_recipe "nodejs"` as a dependency
+include_recipe "nodejs::npm"
