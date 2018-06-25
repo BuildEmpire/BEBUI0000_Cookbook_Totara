@@ -46,7 +46,3 @@ Array(node["cookbook_totara"]["php_pears"]).each_with_index do |pear_name, index
     action :install
   end
 end
-
-service "php-fpm" do
-  action :restart
-end
