@@ -67,6 +67,7 @@ default['cookbook_totara']['default_config']['php-fpm'] = {
   }
 }
 
+default['cookbook_totara']['apt_packages'] = []
 default['cookbook_totara']['php_packages'] = []
 default['cookbook_totara']['php_pears'] = []
 
