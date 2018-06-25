@@ -29,3 +29,19 @@ node.override['php-fpm']['package_name'] = node['cookbook_totara']['default_conf
 
 include_recipe "php"
 include_recipe "php-fpm"
+
+Array(node["cookbook_totara"]["php_packages"]).each_with_index do |package_name, index|
+  package package_name do
+    action :install
+  end
+end
+
+Array(node["cookbook_totara"]["php_pears"]).each_with_index do |pear_name, index|
+  php_pear pear_name do
+    action :install
+  end
+end
+
+service "php-fpm" do
+  action :restart
+end

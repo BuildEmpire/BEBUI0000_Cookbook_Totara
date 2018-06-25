@@ -67,6 +67,9 @@ default['cookbook_totara']['default_config']['php-fpm'] = {
   }
 }
 
+default['cookbook_totara']['php_packages'] = []
+default['cookbook_totara']['php_pears'] = []
+
 default['cookbook_totara']['database']['root_password'] = nil
 default['cookbook_totara']['database']['version'] = '5.7'
 default['cookbook_totara']['database']['databases'] = []
