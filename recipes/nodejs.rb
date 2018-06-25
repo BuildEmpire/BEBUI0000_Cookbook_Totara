@@ -1,6 +1,6 @@
 #
 # Cookbook Name::cookbook_totara
-# Recipe:: nginx
+# Recipe:: nodejs
 #
 # Install Nodejs from nodeversions repository.
 #
