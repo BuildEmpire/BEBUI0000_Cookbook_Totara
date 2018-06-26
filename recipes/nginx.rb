@@ -1,5 +1,5 @@
 #
-# Cookbook Name::cookbook_danimal
+# Cookbook Name::cookbook_totara
 # Recipe:: nginx
 #
 # Install Nginx from package manager.

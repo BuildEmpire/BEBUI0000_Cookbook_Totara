@@ -1,6 +1,6 @@
 #
 # Cookbook Name:: cookbook_totara
-# Recipe::totara
+# Recipe:: totara
 #
 
 # Create the cronic directory

@@ -27,6 +27,7 @@ node.override['php-fpm']['error_log'] = node['cookbook_totara']['default_config'
 node.override['php-fpm']['pid'] = node['cookbook_totara']['default_config']['php-fpm']['pid']
 node.override['php-fpm']['package_name'] = node['cookbook_totara']['default_config']['php-fpm']['package_name']
 
+# Adding this repo ensures desired version of PHP is available
 apt_repository 'ondrej-php' do
     uri     'ppa:ondrej/php'
     trusted true
