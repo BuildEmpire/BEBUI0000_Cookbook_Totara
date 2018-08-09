@@ -1,6 +1,5 @@
 module PHPBox
   module Helpers
-
     def setup_nginx_site(app, app_dir)
       config = merge_nginx_config(
         node["cookbook_totara"]["default_config"]["nginx"],
@@ -46,9 +45,5 @@ module PHPBox
       config = default_config.to_hash
       config.merge(app_config || {})
     end
-
   end
-
-
-
 end
