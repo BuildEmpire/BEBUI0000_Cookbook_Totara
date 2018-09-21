@@ -31,6 +31,16 @@ server {
     ssl_prefer_server_ciphers on;
 <% end -%>
 
+    location /sitemap.xml {
+        root <%= @shared_path %>/data/general;
+        try_files $uri /sitemap.xml;
+    }
+
+    location /robots.txt {
+        root <%= @shared_path %>/data/general;
+        try_files $uri /robots.txt;
+    }
+
     location /catalog {
         try_files $uri $uri/ /catalog/router.php?$args&uri=$uri;
     }

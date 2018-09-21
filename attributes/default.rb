@@ -23,7 +23,8 @@ default['cookbook_totara']['default_config']['nginx'] = {
   'template_cookbook' => 'cookbook_totara',
   'listen_port'       => '80',
   'listen_ssl_port'   => '443',
-  'variables'         => {}
+  'variables'         => {},
+  'shared_path'       => '/home/apps/totara/shared'
 }
 
 default['cookbook_totara']['default_config']['php'] = {
