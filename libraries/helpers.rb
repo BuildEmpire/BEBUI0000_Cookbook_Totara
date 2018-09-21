@@ -31,7 +31,8 @@ module PHPBox
           :ssl_cert        => config["ssl_cert"],
           :ssl_dhparam     => config["ssl_dhparam"],
           :htpasswd_path   => htpasswd_path,
-          :variables       => config["variables"]
+          :variables       => config["variables"],
+          :shared_path     => config['shared_path']
         )
         notifies :reload, "service[nginx]"
       end

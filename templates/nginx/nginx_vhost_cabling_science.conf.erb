@@ -32,12 +32,12 @@ server {
 <% end -%>
 
     location /sitemap.xml {
-        root /home/apps/totara/shared/data/general;
+        root <%= @shared_path %>/data/general;
         try_files $uri /sitemap.xml;
     }
 
     location /robots.txt {
-        root /home/apps/totara/shared/data/general;
+        root <%= @shared_path %>/data/general;
         try_files $uri /robots.txt;
     }
 
