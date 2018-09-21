@@ -7,7 +7,10 @@ default['cookbook_totara']['hostname'] = 'totara.lvh.me'
 default['cookbook_totara']['root_path'] = '/home/apps/totara/current'
 default['cookbook_totara']['cronic'] = '/opt/bin/cronic'
 default['cookbook_totara']['cron_hour'] = "*"
-default['cookbook_totara']['cron_minute'] = "*/5"
+default['cookbook_totara']['cron_minute'] = "*"
+
+default['cookbook_totara']['nodejs']['version'] = '8.11.3'
+default['cookbook_totara']['nodejs']['checksum'] = '1ea408e9a467ed4571730e160993f67a100e8c347f6f9891c9a83350df2bf2be'
 
 default['cookbook_totara']['htpasswd'] = {
   'username' => '',
@@ -36,7 +39,7 @@ default['cookbook_totara']['default_config']['php'] = {
   'fpm_socket'       => '/var/run/php/php7.2-fpm.sock',
   'fpm_default_conf' => '/etc/php/7.2/fpm/pool.d/www.conf',
   'ext_conf_dir'     => '/etc/php/7.2/mods-available',
-  'packages'         => %w(php7.2-cgi php7.2 php7.2-dev php7.2-cli php7.2-mysql php7.2-gd php7.2-mbstring php7.2-zip php7.2-curl php7.2-intl php7.2-xmlrpc php7.2-soap)
+  'packages'         => %w(php7.2-cgi php7.2 php7.2-dev php7.2-cli php7.2-mysql php7.2-gd php7.2-mbstring php7.2-zip php7.2-curl php7.2-intl php7.2-xmlrpc php7.2-soap php7.2-xml)
 }
 
 default['cookbook_totara']['default_config']['php-fpm'] = {
@@ -66,6 +69,11 @@ default['cookbook_totara']['default_config']['php-fpm'] = {
     }
   }
 }
+
+default['cookbook_totara']['apt_packages'] = []
+default['cookbook_totara']['npm_packages'] = []
+default['cookbook_totara']['php_packages'] = []
+default['cookbook_totara']['php_pears'] = []
 
 default['cookbook_totara']['database']['root_password'] = nil
 default['cookbook_totara']['database']['version'] = '5.7'

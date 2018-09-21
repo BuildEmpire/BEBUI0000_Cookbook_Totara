@@ -8,7 +8,7 @@
 root_password = node['cookbook_totara']['database']['root_password']
 
 
-if node['cookbook_totara']['database']['databases']
+if node['cookbook_totara']['database']['databases'].any?
   mysql_client 'default' do
     action :create
     version node['cookbook_totara']['database']['version']
