@@ -3,6 +3,23 @@
 # Recipe:: totara
 #
 
+# Create Nginx Config
+template "/etc/nginx/sites-available/#{node['cookbook_totara']['appname']}" do
+  source 'nginx/nginx_vhost_totara.conf.erb'
+  mode '0755'
+end
+
+nginx_site node['cookbook_totara']['appname'] do
+  enable true
+end
+
+# Add www-data to apps group
+group node['cookbook_totara']['group'] do
+  action :modify
+  members 'www-data'
+  append true
+end
+
 # Create the cronic directory
 # Cronic is a cron job report wrapper
 directory File.dirname(node['cookbook_totara']['cronic']) do
