@@ -16,22 +16,18 @@ nginx_site node['cookbook_totara']['appname'] do
   enable true
 end
 
-# Add www-data to apps group
-group node['cookbook_totara']['group'] do
-  action :modify
-  members 'www-data'
-  append true
-end
 
 user_account node['cookbook_totara']['user'] do
   comment 'User required to deploy applications.'
   ssh_keys node['cookbook_totara']['ssh_keys']
 end
 
+# Add www-data to apps group
 group node['cookbook_totara']['group'] do
-  action :modify
+  action :create
   members [
-   node['cookbook_totara']['user']
+   node['cookbook_totara']['user'],
+    'www-data'
   ]
 end
 
