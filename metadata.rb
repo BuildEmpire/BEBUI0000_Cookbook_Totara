@@ -12,6 +12,8 @@ supports 'ubuntu'
 depends 'apt'
 depends 'locale', '~> 2.1'
 depends 'git', '~> 9'
+depends 'user'
+depends 'sudo'
 
 depends 'mysql'
 depends 'php'
