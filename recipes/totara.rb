@@ -3,6 +3,9 @@
 # Recipe:: totara
 #
 
+include_recipe 'user'
+include_recipe 'sudo'
+
 # Create Nginx Config
 template "/etc/nginx/sites-available/#{node['cookbook_totara']['appname']}" do
   source 'nginx/nginx_vhost_totara.conf.erb'
@@ -18,6 +21,28 @@ group node['cookbook_totara']['group'] do
   action :modify
   members 'www-data'
   append true
+end
+
+user_account node['cookbook_totara']['user'] do
+  comment 'User required to deploy applications.'
+  ssh_keys node['cookbook_totara']['ssh_keys']
+end
+
+group node['cookbook_totara']['group'] do
+  action :modify
+  members [
+   node['cookbook_totara']['user']
+  ]
+end
+
+sudo 'admin' do
+  group %w[admin sudo]
+  nopasswd true
+end
+
+sudo node['cookbook_totara']['user'] do
+  user node['cookbook_totara']['user']
+  nopasswd true
 end
 
 # Create the cronic directory
