@@ -10,7 +10,7 @@ server {
 
     server_name <%= @hostname %>;
     <% if @ssl_key && @ssl_cert -%>
-    listen <%= @listen_ssl_port %> ssl http2;
+    listen <%= @listen_ssl_port %>;
     <% else -%>
     listen <%= @listen_port %>;
     <% end -%>
