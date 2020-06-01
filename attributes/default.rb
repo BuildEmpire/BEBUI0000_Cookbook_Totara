@@ -60,3 +60,4 @@ default['cookbook_totara']['database']['version'] = '5.7'
 default['cookbook_totara']['database']['databases'] = []
 
 default['cookbook_totara']['ssl'] = false;
+default['cookbook_totara']['https'] = false;
