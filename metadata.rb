@@ -4,14 +4,20 @@ maintainer_email 'michael.wright@buildempire.co.uk'
 license          'Apache 2.0'
 description      'Totara cookbook.'
 long_description IO.read(File.join(File.dirname(__FILE__), 'README.md'))
-version          '1.1.2'
+version          '2.0.0'
 
 recipe 'cookbook_totara', 'Totara Cookbook'
 
-%w{ ubuntu }.each do |os|
-  supports os
-end
+supports 'ubuntu'
+depends 'apt'
+depends 'locale', '~> 2.1'
+depends 'git', '~> 9'
+depends 'user'
+depends 'sudo'
 
-%w{ build-essential php php-fpm nodejs nginx mysql acme }.each do |cb|
-  depends cb
-end
+depends 'mysql'
+depends 'php'
+depends 'php-fpm'
+depends 'nodejs'
+depends 'nginx'
+depends 'acme'
